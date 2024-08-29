@@ -1,0 +1,10 @@
+<h1>Hello Journal Posts!</h1>
+
+<% @posts.each do |post| %>
+    <div>
+        <h2>Week: <%=post.week %></h2>
+        <p><%= post.digital_discipline %></p>
+        <p><%= post.date %></p>
+        <p><%= post.body %></p>
+    </div>
+<% end %>
