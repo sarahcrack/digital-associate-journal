@@ -2,12 +2,15 @@
 
 <% @posts.each do |post| %> 
     <div>
-        <h2>Week: <%=post.week %></h2>
-        <p><%= post.digital_discipline %></p>
+        <!-- check if the post's date is a Monday and if so, the week number will be included -->
+        <% if post.date.monday? %>
+            <h2>WEEK: <%=post.week %></h2>
+        <% end %>
         <!-- Display the formatted date using the helper method -->
         <!--This part uses strftime to display the full weekday name (like "Tuesday")--> 
         <!--This calls the ordinalize_day helper method to display the date with the day and month formatted with an ordinal suffix -->
         <p><%= post.date.strftime("%A") %> <%= ordinalize_day(post.date) %></p>  
+        <p><%= post.digital_discipline %></p>
         <p><%= post.body %></p>
     </div>
 <% end %>
