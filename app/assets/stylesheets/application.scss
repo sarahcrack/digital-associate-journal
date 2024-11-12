@@ -14,4 +14,15 @@
  *= require_self
  */
 
-/*# sourceMappingURL=application.css.map */
+// application.scss
+$primary-color: #333;
+$secondary-color: #fae7c5;
+
+body {
+  color: $primary-color;
+  background-color: $secondary-color;
+}
+
+h2 {
+  color: pink;
+}
