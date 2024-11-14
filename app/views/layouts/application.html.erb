@@ -5,12 +5,18 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
     <%= stylesheet_link_tag "application", media: 'all', "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="govuk-template__body">
+    <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
     <%= yield %>
+    <script type="module" src="<%= asset_path('govuk/govuk-frontend.min.js') %>"></script>
+    <script type="module">
+    import { initAll } from '<%= asset_path('govuk/govuk-frontend.min.js') %>';
+    initAll();
+    </script>
   </body>
 </html>
