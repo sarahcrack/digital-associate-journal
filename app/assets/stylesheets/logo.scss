@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Rowdies:wght@700&display=swap");
+
+.logoButton {
+  font-family: "Rowdies", cursive;
+  font-size: 2rem;
+  color: #172a3a;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  padding: 0.1rem 0.3rem;
+  margin-left: 10px;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.logoButton:active {
+  transform: translateY(2px);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px 2px,
+    rgba(0, 0, 0, 0.25) 0px 2px 4px -1px, rgba(0, 0, 0, 0.1) 0px 1px 0px inset;
+}
