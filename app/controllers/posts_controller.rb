@@ -7,6 +7,6 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
   rescue ActiveRecord::RecordNotFound
-    redirect_to root_path, alert: 'Opps...Post not found'
+    redirect_to root_path, alert: 'Opps...Post not found 🙃'
   end
 end
