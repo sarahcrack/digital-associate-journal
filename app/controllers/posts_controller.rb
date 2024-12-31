@@ -9,4 +9,8 @@ class PostsController < ApplicationController
   rescue ActiveRecord::RecordNotFound
     redirect_to root_path, alert: 'Opps...Post not found 🙃'
   end
+
+  def new
+    @post = Post.new
+  end
 end

@@ -1,18 +1,20 @@
-<h1>Hello there 🤩!</h1>
+<div class="content_container">
+  <h1>Hello there 🤩!</h1>
 
-<% @posts.each do |post| %> 
-  <div>
-    <!-- check if the post's date is a Monday and if so, the week number will be included -->
-    <% if post.date.monday? %>
-      <h2>WEEK: <%=post.week %></h2>
-        <p><%= post.digital_discipline %></p>
-        <% end %>
-        <!-- Display the formatted date using the helper method -->
-        <!--This part uses strftime to display the full weekday name (like "Tuesday")--> 
-        <!--This calls the ordinalize_day helper method to display the date with the day and month formatted with an ordinal suffix -->
-    <h3 class="govuk-heading-s">
-      <%= link_to "#{post.date.strftime('%A')} #{ordinalize_day(post.date)}", post %>
-		</h3>
-      <p><%= post.body %></p>
-    </div>
-<% end %>
+  <% @posts.each do |post| %> 
+    <div>
+      <!-- check if the post's date is a Monday and if so, the week number will be included -->
+      <% if post.date.monday? %>
+        <h2>WEEK: <%=post.week %></h2>
+          <p><%= post.digital_discipline %></p>
+          <% end %>
+          <!-- Display the formatted date using the helper method -->
+          <!--This part uses strftime to display the full weekday name (like "Tuesday")--> 
+          <!--This calls the ordinalize_day helper method to display the date with the day and month formatted with an ordinal suffix -->
+      <h3 class="govuk-heading-s">
+        <%= link_to "#{post.date.strftime('%A')} #{ordinalize_day(post.date)}", post %>
+      </h3>
+        <p><%= post.body %></p>
+      </div>
+  <% end %>
+</div>

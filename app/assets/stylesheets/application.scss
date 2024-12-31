@@ -50,6 +50,12 @@ body {
   font-family: "GDS Transport", Arial, sans-serif;
 }
 
+.content_container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 h1 {
   color: $primary-color;
 }
