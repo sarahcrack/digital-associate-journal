@@ -1,34 +1,3 @@
 <h1>New journal post</h1>
 
-<%= form_with model: @post do |form| %>
-  <% if form.object.errors.any? %>
-    <div>
-      <% form.object.errors.full_messages.each do |message| %>
-        <div><%= message %></div>
-      <% end %>
-    </div>
-  <% end %>
-
-  <div>
-    <%= form.label :week %>
-    <%= form.text_field :week %>
-  </div>
-
-  <div>
-    <%= form.label :digital_discipline %>
-    <%= form.text_field :digital_discipline %>
-  </div>
-
-  <div>
-    <%= form.label :date %>
-    <%= form.text_field :date %>
-  </div>
-  
-  <div>
-    <%= form.label :body %>
-    <%= form.text_area :body %>
-  </div>
-
-  <%= form.button %>
-
-<% end %>
+<%= render 'form', post: @post %>
