@@ -1,13 +1,11 @@
 # Description: This controller is responsible for handling the requests related to the posts.
 class PostsController < ApplicationController
+  before_action :set_post, except: %i[index new create]
   def index
     @posts = Post.all
   end
 
   def show
-    @post = Post.find(params[:id])
-  rescue ActiveRecord::RecordNotFound
-    redirect_to root_path, alert: 'Opps...Post not found 🙃'
   end
 
   def new
@@ -24,11 +22,9 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update 
-    @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to @post, notice: 'Post updated successfully 🎉'
     else
@@ -36,9 +32,20 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post.destroy
+    redirect_to root_path, notice: 'Post deleted successfully 🎉'
+  end
+
   private
 
   def post_params
     params.require(:post).permit(:week, :digital_discipline, :date, :body)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to root_path, alert: 'Opps...Post not found 🙃'
   end
 end
