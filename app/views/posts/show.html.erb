@@ -1,4 +1,6 @@
+<div class="content_container">
 <h1 class="govuk-heading-s"><%= @post.date.strftime("%A") %> <%= ordinalize_day(@post.date) %></h1>
 <p><%= @post.body %></p>
 
 <%= link_to "Edit", edit_post_path(@post) if user_signed_in? %>
+</div>
