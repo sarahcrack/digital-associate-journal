@@ -16,6 +16,21 @@
     <% flash.each do |key, message| %>
       <div class="flash <%= key %>"><%= message %></div>
     <% end %>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <div>
+      <% if user_signed_in? %>
+        <%= link_to "New journal post 📝", new_post_path %>
+        <%#= link_to "Profile", edit_user_registration_path %>
+        <%= button_to "Log out", destroy_user_session_path, method: :delete %>
+      <%# else %>
+        <%#= link_to "Log in", new_user_session_path %>
+        <%#= link_to "Sign up", new_user_registration_path %>
+      <% end %>
+    </div>
+
     <%= yield %>
     <script type="module" src="<%= asset_path('govuk/govuk-frontend.min.js') %>"></script>
     <script type="module">
