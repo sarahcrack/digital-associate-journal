@@ -79,6 +79,7 @@ test:
 #
 production:
   <<: *default
-  database: journal_production
-  username: journal
+  database: digital_associate_database
+  username: digital_associate_database_user
   password: <%= ENV["JOURNAL_DATABASE_PASSWORD"] %>
+  host: dpg-cv8mvuan91rc738l0ug0-a
